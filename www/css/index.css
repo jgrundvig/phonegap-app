@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+}
+html, body{
+	background-color: skyblue;
+}
+h1, h4{
+	display: inline;
+}
+
+ul, li{
+	list-style-type: none;
+	padding: 0;
+}
+input[type="checkbox"] {
+	float: left;
+  display: inline;
+}
+input[type="checkbox"]{
+	margin-right: 20px;
+}
+input[type="checkbox"]:checked + label{
+	text-decoration: line-through;
+}
+label {
+	display: block;
+	margin-left: 26px;
+	font-size: 2.5rem;
+	margin: 2.5rem 0;
+	background-color: white;
+}
+.none {
+	display: none;
+}

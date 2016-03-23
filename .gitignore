@@ -1,0 +1,5 @@
+plugins
+platforms
+.idea
+node_modules
+src/node_modules
