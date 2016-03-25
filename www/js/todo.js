@@ -43,8 +43,9 @@ var todo = (function(){
       var isComplete = task.completed === "0" ? "" : "checked";
       taskList += `
       <li>
+        <!-- <input class="hidden" data-id="${task.taskId}" id="checkbox-${task.taskId}" ${isComplete} type="checkbox"> -->
         <input class="hidden" data-id="${task.taskId}" id="checkbox-${task.taskId}" ${isComplete} type="checkbox">
-        <label data-id="${task.taskId}" for="checkbox-${task.taskId}">${task.description}</label>
+        <label data-idLabel="${task.taskId}" for="checkbox-${task.taskId}">${task.description}</label>
       </li>`;
     });
   };
@@ -66,7 +67,7 @@ var todo = (function(){
       };
       todoService.createTask(request, function(success, error){
         if(!error){
-          console.log("Success!");
+          //console.log("Success!");
           updateTaskList();
         }
         else{
@@ -88,7 +89,7 @@ var todo = (function(){
   var onTaskClicked = function(e){
     var attributes = e.target.attributes;
     if(attributes.getNamedItem("data-id")){
-      // console.log('fired');
+      //console.log('fired');
       var taskId = attributes.getNamedItem("data-id").value;
       var completed = document.getElementById("checkbox-" + taskId).checked;
       var request = {
@@ -97,12 +98,14 @@ var todo = (function(){
       };
       todoService.updateTask(request, function(success, error){
         if(!error){
-          console.log(success);
+          //console.log(success);
+          updateTaskList();
         }
         else {
           console.error("yo dawg, there is an error updating.");
         }
       });
+
     }
   };
   var onDeleteAllTasks = function(){

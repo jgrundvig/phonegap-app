@@ -66,8 +66,8 @@ var sign_in = (function() {
 			userId: data.userId,
 			username: data.username
 		};
-		console.log('SIGNING IN...');
-		console.log(user);
+		//console.log('SIGNING IN...');
+		//console.log(user);
 		todo.load(user);
 	}
 	var onError = function(){
