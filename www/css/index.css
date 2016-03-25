@@ -11,7 +11,12 @@ html, body{
 h1, h4{
 	display: inline;
 }
-
+h1{
+	font-size: 5.3rem;
+}
+h4{
+	font-size: 3.0rem;
+}
 ul, li{
 	list-style-type: none;
 	padding: 0;
@@ -35,4 +40,8 @@ label {
 }
 .none {
 	display: none;
+}
+.form-control{
+	height: 6.3rem;
+	font-size: 20px;
 }

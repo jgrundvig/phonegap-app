@@ -34,6 +34,7 @@ var register = (function(){
       sign_in.load();
     });
   };
+
   var onRegister = function(e){
     e.preventDefault();
     var username = document.getElementById('register-username').value;
@@ -58,7 +59,11 @@ var register = (function(){
       request.addEventListener('error', function(data){
         onError();
       });
-      request.open("POST", "http://icarus.cs.weber.edu/~jg13534/cs3750/todo/CreateUser.php");
+
+      // add hash algorithm here to password
+      password = hash.sha256_digest(password);
+
+  		request.open("POST", "http://icarus.cs.weber.edu/~jg13534/cs3750/todo/CreateUser.php");
       request.send(form.sendData({
         "username": username,
         "password": password
@@ -83,6 +88,7 @@ var register = (function(){
       break;
       case 'mismatch-pw':
       var error = document.getElementById('mismatch-pw').className = 'bg-danger';
+      break;
       case 'db-error':
       var error = document.getElementById('db-error').className = 'bg-danger';
     }

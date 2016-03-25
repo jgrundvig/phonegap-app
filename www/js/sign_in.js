@@ -26,7 +26,8 @@ var sign_in = (function() {
 		e.preventDefault();
 		var username = document.getElementById('sign-in-username').value;
 		var password = document.getElementById('sign-in-password').value;
-		// add hash algorithm here to password
+	  password = hash.sha256_digest(password);
+
 		var request = new XMLHttpRequest();
 		var formData = form.sendData({
 			"username": username,
