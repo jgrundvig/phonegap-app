@@ -1,6 +1,5 @@
 var todo = (function(){
   var taskList = "";
-  var username = "";
   var user = {};
   var allTasks = [];
   var template = function(){
@@ -89,7 +88,7 @@ var todo = (function(){
   var onTaskClicked = function(e){
     var attributes = e.target.attributes;
     if(attributes.getNamedItem("data-id")){
-      console.log('fired');
+      // console.log('fired');
       var taskId = attributes.getNamedItem("data-id").value;
       var completed = document.getElementById("checkbox-" + taskId).checked;
       var request = {

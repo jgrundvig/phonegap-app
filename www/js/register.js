@@ -28,6 +28,7 @@ var register = (function(){
     document.getElementById('container').innerHTML = template;
     var submit = document.getElementById('register');
     submit.addEventListener('click', onRegister);
+
     var remembered = document.getElementById('i-remembered');
     remembered.addEventListener('click', function(e){
       e.preventDefault();
@@ -35,8 +36,8 @@ var register = (function(){
     });
   };
 
-  var onRegister = function(e){
-    e.preventDefault();
+  var onRegister = function(event){
+    event.preventDefault();
     var username = document.getElementById('register-username').value;
 		var password = document.getElementById('register-password').value;
     var passwordConfirmation = document.getElementById('register-password-confirm').value;
